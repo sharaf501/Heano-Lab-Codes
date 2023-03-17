@@ -1,2 +1,2 @@
 # Heano-Lab-Codes
-Codes for the Research Project on Computational Model of Cancer Initiation and Locoregional Recurrence with Spatial Structure
+Computational Modeling of Locoregional Recurrence with Spatial Structure identifies Tussie-specific Carcinogenic Profiles
