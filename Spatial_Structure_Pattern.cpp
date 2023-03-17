@@ -1,5 +1,5 @@
 //
-// Spatial Structure Initiation Pattern (Fro Figure 4 in Abubakar et al.)
+// Spatial Structure Initiation Pattern (For Figure 4 in Abubakar et al.)
 //
 
 // Executes 2 file names. fp is cell numbers for each cell type at specific time point while fp2 is parameter combination
@@ -103,7 +103,7 @@ int main(void){
     time=0;
 
     for(t1=0;t1<100000000;t1++){
-        op=rand_dist(mt); //decides whilh trial to run
+        op=rand_dist(mt); //decides which trial to run
         fit=rand_dist(mt); //Moran proces, decides which cell divides
         mu1=rand_dist(mt);  //decides whether to mutate from Type 0 to Type 1
         mu2=rand_dist(mt); //decides whether to mutate from Type 0 to Type S-1

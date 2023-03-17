@@ -190,7 +190,7 @@ int main(void){
             for(t1=0;t1<1000000000;t1++){
                 
                 
-                op=rand_dist(mt); //decides whilh trial to run
+                op=rand_dist(mt); //decides which trial to run
                 fit=rand_dist(mt); //Moran proces, decides which cell divides
                 mu1=rand_dist(mt);  //decides whether to mutate from Type 0 to Type 1
                 mu2=rand_dist(mt); //decides whether to mutate from Type 0 to Type S-1
@@ -1137,7 +1137,7 @@ int main(void){
             
             for(t0=0; t0<time ; t0++){
                 
-                op=rand_dist(mt); //decides whilh trial to run
+                op=rand_dist(mt); //decides which trial to run
                 fit=rand_dist(mt); //Moran proces, decides which cell divides
                 mu1=rand_dist(mt);  //decides whether to mutate from Type 0 to Type 1
                 mu2=rand_dist(mt); //decides whether to mutate from Type 0 to Type S-1
@@ -2068,7 +2068,7 @@ int main(void){
                 
                 // premalignant cells eventually becomes Type S cells
                 
-                op=rand_dist(mt); //decides whilh trial to run
+                op=rand_dist(mt); //decides which trial to run
                 fit=rand_dist(mt); //Moran proces, decides which cell divides
                 mu1=rand_dist(mt);  //decides whether to mutate from Type 0 to Type 1
                 mu2=rand_dist(mt); //decides whether to mutate from Type 0 to Type S-1
