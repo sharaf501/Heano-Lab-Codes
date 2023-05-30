@@ -1,5 +1,5 @@
 //
-//  Spatial Structure Recurrence (For Figure 5 in Abubakar et al.)
+//  Spatial Structure Recurrence (For Figure 5 in Abubakar et al. . Frontiers in Oncology, 2023))
 //  
 
 //  Executes 2 file names. fp is mean +/- SD of recurrence and proportion of Type S-1 cells for each parameter while fp2 is parameter combination
@@ -51,7 +51,7 @@ int main(void){
     double totalrate; //for cell division
     double b1rate,b2rate,b3rate,b4rate;
 
-    // Input file name below (ends with .dat)
+    // Name output file (ends with .dat)
    FILE *fp;
    FILE *fp2;
          fp=fopen("r1_4pmodel_sp_2.5k.dat","w");
@@ -78,12 +78,17 @@ int main(void){
     
 
     // adjust range of parameter for dependence on recurrence time
+    // Run ONLY one parameter at a time
+    // Ensure output variable is same as currently analyzed variable
     
-    // for(po=-5;po<-1.9;po+=0.3){
     for(r1=0.90;r1<1.11;r1+=0.02){
+    // for(r2=0.90;r2<1.11;r2+=0.02){
     // for(r3=1.05;r3<1.51;r3+=0.05){
+    // for(po=-5;po<-1.9;po+=0.3){
+    // u1=(double)pow(10.0,po);
+    // u2=(double)pow(10.0,po);
     // u3=(double)pow(10.0,po);
-
+        
         sumtt=0;
         sumtr=0;
         sVt=0;
@@ -1078,7 +1083,7 @@ int main(void){
             
             time=d*(double)N*(1/(r3-d))*log((double)actual_size/(double)detect_size);
             
-            for(t0=0; t0<(int)time; t0++){
+            for(t0=0; t0<(int)time ; t0++){
                 
                 op=rand_dist(mt); //decides which trial to run
                 fit=rand_dist(mt); //Moran proces, decides which cell divides

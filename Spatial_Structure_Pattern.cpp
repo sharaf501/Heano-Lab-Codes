@@ -1,5 +1,5 @@
 //
-// Spatial Structure Initiation Pattern (For Figure 4 in Abubakar et al.)
+// Spatial Structure Initiation Pattern (For Figure 4 in Abubakar et al. . Frontiers in Oncology, 2023))
 //
 
 // Executes 2 file names. fp is cell numbers for each cell type at specific time point while fp2 is parameter combination
@@ -55,7 +55,7 @@ int main(void){
     double totalrate; //for cell division
     double b1rate,b2rate,b3rate,b4rate;
     
-    // Input file name below (ends with .dat)
+    // Name output file (ends with .dat)
     FILE *fp;
     FILE *fp2;
     fp=fopen("4pmodel1sp_zzbbb1.dat","w");

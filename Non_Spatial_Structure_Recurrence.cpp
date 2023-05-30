@@ -1,5 +1,5 @@
 //
-//  Non Spatial Structure Recurrrence (For Figure 3 in Abubakar et al.)
+//  Non Spatial Structure Recurrrence (For Figure 3 in Abubakar et al. . Frontiers in Oncology, 2023))
 //
 
 //Executes 2 file names. fp is mean +/- SD of recurrence and proportion of Type S-1 cells for each parameter while fp2 is parameter combination
@@ -43,7 +43,7 @@ int main(void){
     int pro[3];
     double prop[4];
     
-    // Input file name below (ends with .dat)
+    // Name output file (ends with .dat)
     FILE *fp;
    FILE *fp2;
          fp=fopen("u1_4pmodel1k.dat","w");
@@ -66,11 +66,16 @@ int main(void){
     
     
     // adjust range of parameter for dependence on recurrence time
+    // Run ONLY one parameter at a time
+    // Ensure output variable is same as currently analyzed variable
     
-    for(po=-5;po<-1.9;po+=0.3){
+    // for(r1=0.90;r1<1.11;r1+=0.02){
     // for(r2=0.90;r2<1.11;r2+=0.02){
     // for(r3=1.05;r3<1.51;r3+=0.05){
+    for(po=-5;po<-1.9;po+=0.3){
     u1=(double)pow(10.0,po);
+    // u2=(double)pow(10.0,po);
+    // u3=(double)pow(10.0,po);
         
         for(i=0;i<tCYCLE;i++){
             it[i]=0.0;

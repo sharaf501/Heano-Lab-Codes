@@ -1,5 +1,5 @@
 //
-// Non Spatial Structure Initiation Pattern (For Figure 2 in Abubakar et al.)
+// Non Spatial Structure Initiation Pattern (For Figure 2 in Abubakar et al. Frontiers in Oncology, 2023)
 //
 
 //Executes 2 file names. fp is cell numbers for each cell type at specific time point while fp2 is parameter combination
@@ -43,7 +43,7 @@ int main(void){
     int pro[3];
     double prop[4];
     
-    // Input file name below (ends with .dat)
+    // Name output file (ends with .dat)
    FILE *fp;
    FILE *fp2;
          fp=fopen("4pmodelaaxux_1.dat","w");

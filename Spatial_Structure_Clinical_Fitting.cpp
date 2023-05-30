@@ -1,8 +1,10 @@
 //
-//  Spatial Structure Fitting of Clinical Data (For Figure 6 in Abubakar et al.)
+//  Spatial Structure Fitting of Clinical Data (For Figure 6 in Abubakar et al. . Frontiers in Oncology, 2023))
 //  
 
-//  Executes 2 file names. fp is list of parameter combination each with its mean of squared logarithmic residual while fp2 is list of recurrence times for clinical data and simulated data.
+//  Executes 2 file names.
+// fp is list of accepted parameter combinations each with its mean of squared logarithmic residual
+// fp2 is list of ALL parameter combinations and recurrence times tested in the simulation
 
 #include<iostream>
 #include<fstream>
@@ -21,8 +23,7 @@
 #define actual_size 1000000000 // tissue size for cancer diagnosis
 #define r0 1.0 // fitness of type 0 cell
 #define SRUN 25 // number of entries for clinical data relative to 100
-//#define d 1.0
-//#define d3 1.0
+
 // death rate is undefined. To be calculated for each parameter combination
 
 using namespace std;
@@ -57,7 +58,7 @@ int main(void){
     double Q,SQ,epsilon;
     int counter;
     
-    // Input file name (ends with .dat). Specific for each clinical dataset
+    // Name output file (ends with .dat). Specific for each clinical dataset
     FILE *fp;
     FILE *fp2;
     fp=fopen("4pmodel_sp_fit_OSCC.dat","w");
@@ -91,27 +92,10 @@ int main(void){
         u2=pow(10.0,po2); // mutation rate from Type 1 to Type S-1
         u3=pow(10.0,po3); // mutation rate from Type S-1 to Type S
         
-   //     po1=rand_mu_dist(mt);
-   //     po2=rand_mu_dist(mt);
-   //     po3=rand_mu_dist(mt);
-        /*   r1=0.912;
-         r2=1.035;
-         d=2.989;
-         d3=d;
-         r3=5.946;
-         
-         u1=0.00021;
-         u2=0.000476;
-         u3=0.000047;
-         */
         for(a=0;a<100;a++){
             databox[a]=0.0;
         }
-        /*    databox[0]=1.74;
-         databox[2]=15.0;
-         databox[4]=36.7;
-         databox[6]=70.0;
-         */
+       
         // input proportion of patients with cancer recurrence relative to 100 for each clinical dataset
         // values MUST be same with SRUN. For example, if SRUN is 25, put proportion for every 4th percentile - 4%, 8%, 16%, ........ 100%
         
@@ -132,11 +116,6 @@ int main(void){
         databox[21]=130.9;
         
         fprintf(fp2,"N=%d detect_size=%d actual_size=%d r0=%f r1=%f r2=%f r3=%f d=%f d3=%f u1=%f u2=%f u3=%f\n",N,detect_size,actual_size,r0,r1,r2,r3,d,d3,u1,u2,u3);
-        
-        //    for(po=-5;po<-4.9;po+=0.3){
-        // for(r2=0.90;r2<1.11;r2+=0.02){
-        // for(r3=1.05;r3<1.51;r3+=0.05){
-        //   u1=(double)pow(10.0,po);
         
         sumtt=0;
         sumtr=0;
@@ -1135,7 +1114,7 @@ int main(void){
             
             time=d*(double)N*(1/(r3-d3))*log((double)actual_size/(double)detect_size);
             
-            for(t0=0; t0<time ; t0++){
+            for(t0=0; t0<(int)time ; t0++){
                 
                 op=rand_dist(mt); //decides which trial to run
                 fit=rand_dist(mt); //Moran proces, decides which cell divides
@@ -2989,6 +2968,7 @@ int main(void){
             
             time=time+(1/(r3-d3))*log((double)actual_size/(double)detect_size);
             tr[cycle]=time; //time to recurence
+            
             //            fprintf(fp,"%f %d\n",time,abort);
             
         }
